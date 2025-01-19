@@ -1,13 +1,13 @@
-package org.launchcode.Q1_Software;
+package org.launchcode.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Q1SoftwareApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Q1SoftwareApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

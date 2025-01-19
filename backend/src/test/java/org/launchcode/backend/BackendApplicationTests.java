@@ -1,10 +1,10 @@
-package org.launchcode.Q1_Software;
+package org.launchcode.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Q1SoftwareApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {
