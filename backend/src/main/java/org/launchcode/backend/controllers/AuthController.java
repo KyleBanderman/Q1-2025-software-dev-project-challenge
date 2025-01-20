@@ -16,6 +16,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.launchcode.backend.security.JwtTokenGenerator;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin("http://localhost:3000/")
@@ -27,6 +29,7 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
     private AuthenticationManager authenticationManager;
     private JwtTokenGenerator tokenGenerator;
+
 
     @PostMapping("/signup")
     public ResponseEntity<String> RegisterNewUser (@Valid @RequestBody UserDTO userDTO) {
@@ -52,4 +55,10 @@ public class AuthController {
     }
 
     //POST auth/logout terminates user session and denies token
+
+    @GetMapping("user")
+    public Optional<User> returnUserFromToken(Authentication authentication){
+        String username = authentication.getName();
+        return userRepository.findByUsername(username);
+    }
 }
