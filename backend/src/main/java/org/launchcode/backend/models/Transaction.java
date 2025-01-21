@@ -21,13 +21,12 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final int id;
+    private int id;
 
 
-    public Transaction(User user, Double amount, int id) {
+    public Transaction(User user, Double amount) {
         this.user = user;
         this.amount = amount;
-        this.id = id;
         if (this.amount < 0) {
             transactionType = TransactionType.EXPENSE;
         }
@@ -39,6 +38,8 @@ public class Transaction {
         }
         this.amount = Math.abs(amount);
     }
+
+    public Transaction () {}
 
     public User getUser() {
         return user;
